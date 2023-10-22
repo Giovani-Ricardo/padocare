@@ -11,7 +11,7 @@ export class MenuPage implements OnInit {
     new Button('Perfil De Usuário', 'person-outline', './perfil-user', ''),
     new Button('Gerenciar Usuários', 'people-outline', '', ''),
     new Button('Registro De Acessos', 'newspaper-outline', '', ''),
-    new Button('Conexões', 'radio-outline', '', ''),
+    new Button('Conexões', 'radio-outline', './conexoes', ''),
     new Button('Configurações', 'cog', '', ''),
     new Button('Sair', 'log-out-outline', '', 'sair'),
   ]
