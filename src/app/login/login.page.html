@@ -1,0 +1,17 @@
+<ion-content [fullscreen]="true">
+  <div class="panel">
+    <div class="header">
+      <img alt="Logo Padocare" src="../../assets/logo.png" />
+    </div>
+    <div class="content">
+      <form (ngSubmit)="login()">
+        <ion-input [(ngModel)]="id" label="ID" name="id" label-placement="floating" fill="outline" placeholder="ID"></ion-input>
+        <ion-input [(ngModel)]="password" label="Senha" name="password" label-placement="floating" fill="outline" placeholder="Senha" type="password"></ion-input>
+        <ion-button expand="full" type="submit">Entrar</ion-button>
+        <ion-button expand="full" type="button">Primeiro Acesso</ion-button>
+        <span>Não tem uma conta?</span>
+        <a href="">Crie sua conta</a>
+      </form>
+    </div>
+  </div>
+</ion-content>

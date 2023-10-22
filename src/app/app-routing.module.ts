@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'perfil-user',
     loadChildren: () => import('./perfil-user/perfil-user.module').then( m => m.PerfilUserPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
 
 ];
 
