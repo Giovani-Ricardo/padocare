@@ -10,9 +10,18 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'conexoes',
+    loadChildren: () => import('./conexoes/conexoes.module').then( m => m.ConexoesPageModule)
+  },
+  {
+    path: 'perfil-user',
+    loadChildren: () => import('./perfil-user/perfil-user.module').then( m => m.PerfilUserPageModule)
   },
 
 ];

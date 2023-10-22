@@ -14,13 +14,69 @@
       align-items: center;
   
       h1 {
-        font-size: 38px;
+        font-size: 30px;
         font-family: 'Orbitron';
         font-weight: 600;
         height: 20%;
       }
+
+      h2{
+        margin-top: -35%;
+        margin-right: 50%;
+        font-size: 12px;
+        font-family: 'Orbitron';
+        font-weight: 200;
+        height: 40%;
+        color: #de2b6e;
     }
-  
+      h3{
+        font-size: 12px;
+        font-family: 'Orbitron';
+        font-weight: 200;
+        height: 40%;
+        color: #de2b6e;
+    }
+
+    ion-card-header{
+      top:-20%;
+
+      ion-avatar {
+        width: 60px;
+        height: 60px;
+        align-self: left;
+      }
+      ion-button{
+        margin-left: 240px;
+        color: #de2b6e;
+        font-size: 10px;
+        
+        ion-icoon {
+          top: -50%;
+        }
+        
+      }
+      ion-card-title {
+        top:-60px;
+        color: #de2b6e;
+        margin-left: 35%;
+        font-family: 'Orbitron';
+        font-weight: 400;
+        font-size: 15px;
+      }
+      ion-card-subtitle{
+        top:-55px;
+        color: #de2b6e;
+        margin-left: 37%;
+        font-family: 'Orbitron';
+        font-weight: 150;
+        font-size: 8px;
+      }
+    }
+    ion-card{
+      top: -100%;
+      font-weight: 150;
+    }
+  }
     .header {
       width: 100%;
       height: 100%;
@@ -39,7 +95,7 @@
       ion-chip {
         font-size: 22px;
         margin: 30px 10px 20px 10px;
-        height: 50px;
+        height: 60px;
         
         ion-avatar {
           width: 40px;

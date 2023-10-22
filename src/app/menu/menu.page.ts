@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MenuPage implements OnInit {
 
   public menuButtons: Array<Button> = [
-    new Button('Perfil De Usuário', 'person-outline', '', ''),
+    new Button('Perfil De Usuário', 'person-outline', './perfil-user', ''),
     new Button('Gerenciar Usuários', 'people-outline', '', ''),
     new Button('Registro De Acessos', 'newspaper-outline', '', ''),
     new Button('Conexões', 'radio-outline', '', ''),
