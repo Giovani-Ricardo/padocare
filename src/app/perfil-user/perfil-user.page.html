@@ -1,0 +1,47 @@
+<ion-content [fullscreen]="true">
+  <div class="panel">
+    <div class="header">
+      <ion-button href="/menu" color="none">
+        <ion-icon name="menu-outline" size="large"></ion-icon>
+      </ion-button>
+    </div>
+    <div class="content">
+      <h1>Perfil de Usuário</h1>
+        <ion-card-header>
+          <ion-button fill="clear">
+            <ion-icon name="pencil-outline"></ion-icon>
+          </ion-button>
+        <ion-avatar>
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-card-title>Fulana de Tal</ion-card-title>
+        <ion-card-subtitle>Usuário Administrador</ion-card-subtitle>
+        </ion-card-header>
+        <div>
+          <h2>Meu Endereço</h2>
+          <ion-card id="endereco">
+            <ion-card-header>
+              <ion-button fill="clear">editar
+                <ion-icon name="pencil-outline"></ion-icon>
+              </ion-button>
+                <ion-card-content>
+                  Rua 1201, Nº10 AP1305<br>
+                  Londrina, Paraná - Brasil 86025660
+                </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+          <h3>Outros Dispositivos IoTPado</h3>
+          <ion-card id="dispositivos">
+            <ion-card-header>
+              <ion-button fill="clear">Vincule sua conta a outros dispositivos
+                <ion-icon name="arrow-redo-outline"></ion-icon>
+              </ion-button>
+            </ion-card-header>
+          </ion-card>
+        </div>
+    </div>
+    <div class="footer">
+      <img alt="Logo Padocare" src="../../assets/logo.png" />
+    </div>
+  </div>
+</ion-content>
