@@ -1,0 +1,48 @@
+<ion-content [fullscreen]="true">
+  <div class="panel">
+    <div class="header">
+      <ion-button href="/menu" color="none">
+        <ion-icon name="menu-outline" size="large"></ion-icon>
+      </ion-button>
+      <ion-chip>
+        <ion-avatar>
+          <img
+            alt="Avatar"
+            src="https://ionicframework.com/docs/img/demos/avatar.svg"
+          />
+        </ion-avatar>
+        <ion-label>Usuário</ion-label>
+      </ion-chip>
+    </div>
+    <div class="content">
+      <h1>Conexões</h1>
+      <ion-list class="conexoes">
+        <ion-card>
+          <ion-item>
+            <ion-icon aria-hidden="true" name="wifi" slot="start"></ion-icon>
+            <ion-toggle>
+              <ion-label>Wi-Fi</ion-label>
+              <ion-note color="medium">Ativar/Desativar rede wi-fi</ion-note>
+            </ion-toggle>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-icon
+              aria-hidden="true"
+              name="bluetooth"
+              slot="start"
+            ></ion-icon>
+            <ion-toggle>
+              <ion-label>Bluetooth</ion-label>
+              <ion-note color="medium">Ativar/Desativar Bluetooth</ion-note>
+            </ion-toggle>
+          </ion-item>
+        </ion-card>
+      </ion-list>
+    </div>
+    <div class="footer">
+      <img alt="Logo Padocare" src="../../assets/logo.png" />
+    </div>
+  </div>
+</ion-content>
