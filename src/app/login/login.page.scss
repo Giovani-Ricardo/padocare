@@ -11,9 +11,23 @@
       display: flex;
       flex-direction: column;
       margin: 30px;
-
       ion-input{
         margin-bottom: 20px;
+      }
+      ion-button{
+        height: 50px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      span{
+        margin-top: 15px;
+        align-self: center;
+      }
+
+      a{
+        align-self: center;
+        color: #DE2B6E
       }
     }
   }

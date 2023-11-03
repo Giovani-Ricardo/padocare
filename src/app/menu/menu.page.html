@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
   <div class="panel">
     <div class="header">
-      <ion-button href="/home" color="none">
+      <ion-button (click)="openHome()" color="none">
         <ion-icon name="home-outline" size="large"></ion-icon>
       </ion-button>
       <ion-chip>
@@ -18,7 +18,7 @@
           <ion-row>
             <ion-col size="6" *ngFor="let button of menuButtons">
               <div class="menu-button">
-                <a href="{{button.url}}" class="{{button.classe}}" >
+                <a [attr.href]="!!button.url ? button.url : null" class="{{button.classe}}" (click)="button.evento()" >
                   <ion-icon name="{{button.icon}}" size="large">
                   </ion-icon>
                   <span>{{button.description}}</span>
