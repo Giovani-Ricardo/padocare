@@ -5,8 +5,14 @@
     </div>
     <div class="content">
       <form (ngSubmit)="login()">
-        <ion-input [(ngModel)]="id" label="ID" name="id" label-placement="floating" fill="outline" placeholder="ID"></ion-input>
+        <ion-input [(ngModel)]="email" label="E-mail" name="email" label-placement="floating" fill="outline" placeholder="exemplo@email.com"></ion-input>
         <ion-input [(ngModel)]="password" label="Senha" name="password" label-placement="floating" fill="outline" placeholder="Senha" type="password"></ion-input>
+        <ion-toast
+          [isOpen]="isToastOpen"
+          [message]="message"
+          [duration]="5000"
+          (didDismiss)="setOpenToast(false)"
+        ></ion-toast>
         <ion-button expand="block" type="submit">Entrar</ion-button>
         <span>Não tem uma conta?</span>
         <a href="">Crie sua conta</a>

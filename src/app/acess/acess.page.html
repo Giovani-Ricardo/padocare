@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true">
+  <div class="panel">
+    <div class="header">
+      <ion-button (click)="openHome()" color="none">
+        <ion-icon name="home-outline" size="large"></ion-icon>
+      </ion-button>
+      <ion-chip>
+        <ion-avatar>
+          <img alt="Avatar" src="../../assets/avatar.svg" />
+        </ion-avatar>
+        <ion-label>{{user.name}}</ion-label>
+      </ion-chip>
+    </div>
+    <div class="content">
+      <ion-content>
+        <ion-list>
+          <ion-item *ngFor="let acesso of acessos">
+            <ion-avatar slot="start">
+              <img src="../../assets/avatar.svg" alt="avatar" />
+            </ion-avatar>
+            <ion-label>{{acesso.user_name}}</ion-label>
+            <ion-label>{{acesso.date}}</ion-label>
+            <ion-label>{{acesso.time}}</ion-label>
+            <ion-label>{{acesso.type}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </div>
+    <div class="footer">
+      <img alt="Logo Padocare" src="../../assets/logo.png" />
+    </div>
+  </div>
+</ion-content>

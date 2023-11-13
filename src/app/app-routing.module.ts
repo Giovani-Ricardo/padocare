@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -20,6 +20,35 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'acess',
+    loadChildren: () => import('./acess/acess.module').then( m => m.AcessPageModule)
+  },
+  {
+    path: 'add',
+    loadChildren: () => import('./add/add.module').then( m => m.AddPageModule)
+  },
+  {
+    path: 'geren',
+    loadChildren: () => import('./geren/geren.module').then( m => m.GerenPageModule)
+  },
+  {
+    path: 'conexoes',
+    loadChildren: () => import('./conexoes/conexoes.module').then( m => m.ConexoesPageModule)
+  },
+  {
+    path: 'conexoes',
+    loadChildren: () => import('./conexoes/conexoes.module').then( m => m.ConexoesPageModule)
+  },
+  {
+    path: 'configuracoes',
+    loadChildren: () => import('./configuracoes/configuracoes.module').then( m => m.ConfiguracoesPageModule)
+  },
+  {
+    path: 'perfil-user',
+    loadChildren: () => import('./perfil-user/perfil-user.module').then( m => m.PerfilUserPageModule)
+  },
+
 
 ];
 

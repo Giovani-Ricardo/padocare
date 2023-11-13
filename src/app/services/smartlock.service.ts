@@ -46,7 +46,6 @@ const doPost = async (value: string) => {
   };
 
   const response = await CapacitorHttp.post(options);
-  console.log(response)
 };
 
 const DEVICE = numberToUUID(0x180d);

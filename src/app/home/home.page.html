@@ -6,9 +6,9 @@
       </ion-button>
       <ion-chip>
         <ion-avatar>
-          <img alt="Avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <img alt="Avatar" src="../../assets/avatar.svg" />
         </ion-avatar>
-        <ion-label>Usuário</ion-label>
+        <ion-label>{{user.name}}</ion-label>
       </ion-chip>
     </div>
     <div class="content">
@@ -23,10 +23,16 @@
       <div class="center-menu">
         <a (click)="sendRequest()" class="btn-open" [ngClass]="{'bg-default': !status, 'bg-opened': status}" >
           <span class="traco superior" [ngStyle]="{'background-color': status ? '#2bde61' : '#DE2B6E'}"></span>
-          <img alt="Logo Padocare" src="../../assets/icon/pado-icon.svg"/>
+          <img alt="Logo Padocare" [src]=" status ? '../../assets/icon/pado-icon-verde.svg' : '../../assets/icon/pado-icon.svg'"/>
           <span class="traco inferior" [ngStyle]="{'background-color': status ? '#2bde61' : '#DE2B6E'}"></span>
           <span class="center-circle" [ngStyle]="{'border-color': status ? '#2bde61' : '#DE2B6E'}"></span>
         </a>
+        <ion-toast
+          [isOpen]="isToastOpen"
+          [message]="message"
+          [duration]="500"
+          (didDismiss)="setOpenToast(false)"
+        ></ion-toast>
       </div>
       <div class="right-menu">
         <a (click)="ativarWifi()">

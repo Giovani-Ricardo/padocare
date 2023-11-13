@@ -7,23 +7,35 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-  constructor(  private navController: NavController) { }
+  public user: any;
+  constructor(  private navController: NavController) {
+    this.user = this.getUser();
+  }
 
   public menuButtons: Array<Button> = [
-    new Button('Perfil De Usuário', 'person-outline', '', '', () => { this.navController.navigateForward('/menu')}),
-    new Button('Gerenciar Usuários', 'people-outline', '', '', () => { this.navController.navigateForward('/menu')}),
-    new Button('Registro De Acessos', 'newspaper-outline', '', '', () => { this.navController.navigateForward('/menu')}),
-    new Button('Conexões', 'radio-outline', '', '', () => { this.navController.navigateForward('/menu')}),
-    new Button('Configurações', 'cog', '', '', () => { this.navController.navigateForward('/menu')}),
-    new Button('Sair', 'log-out-outline', null, 'sair', () => {this.navController.navigateForward('/login')}),
+    new Button('Perfil De Usuário', 'person-outline', '', '', () => { this.navController.navigateForward('/perfil-user')}),
+    new Button('Gerenciar Usuários', 'people-outline', '', '', () => { this.navController.navigateForward('/geren')}),
+    new Button('Registro De Acessos', 'newspaper-outline', '', '', () => { this.navController.navigateForward('/acess')}),
+    new Button('Conexões', 'radio-outline', '', '', () => { this.navController.navigateForward('/conexoes')}),
+    new Button('Configurações', 'cog', '', '', () => { this.navController.navigateForward('/configuracoes')}),
+    new Button('Sair', 'log-out-outline', null, 'sair', () => { this.sair() }),
   ]
 
+  getUser(){
+    let user: any = localStorage.getItem('user');
+    return JSON.parse(user);
+  }
 
   ngOnInit() {
   }
 
   openHome(){
     this.navController.navigateForward('/home')
+  }
+
+  sair(){
+    localStorage.clear()
+    this.navController.navigateForward('/login')
   }
 }
 

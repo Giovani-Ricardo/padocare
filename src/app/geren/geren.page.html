@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true">
+  <div class="panel">
+    <div class="header">
+      <ion-button (click)="openHome()" color="none">
+        <ion-icon name="home-outline" size="large"></ion-icon>
+      </ion-button>
+      <ion-chip>
+        <ion-avatar>
+          <img alt="Avatar" src="../../assets/avatar.svg" />
+        </ion-avatar>
+        <ion-label>{{user.name}}</ion-label>
+      </ion-chip>
+    </div>
+    <ion-content>
+      <div class="content">
+        <h1>Gerenciar Usuários</h1>
+        <div class="container">
+          <ul>
+            <li *ngFor="let usuario of usuarios">
+              <ion-avatar slot="start">
+                <img src="../../assets/avatar.svg" alt="avatar" />
+              </ion-avatar>
+              <span>{{usuario.name}}</span>
+              <div class="user-buttons">
+                <a (click)="openModal(true, usuario.id)"><ion-icon name="create-outline"></ion-icon></a>
+                <a [id]="'deletar-usuario-' + usuario.id" (click)="setUsuarioAtual(usuario.id)"><ion-icon name="trash-outline"></ion-icon></a>
+                <ion-alert
+                  [trigger]="'deletar-usuario-' + usuario.id"
+                  header="Tem certeza?"
+                  [id]="usuario.id"
+                  [buttons]="alertButtons"
+                ></ion-alert>
+              </div>
+            </li>
+          </ul>
+
+          <ion-button (click)="openModal(false, null)" expand="block" shape="round">
+            <ion-icon name="add" size="large"></ion-icon>
+          </ion-button>
+
+          <ion-modal [initialBreakpoint]="0.5" [breakpoints]="[0, 0.5]">
+            <ng-template>
+              <div class="form-container block">
+                <ion-toolbar>
+                  <ion-title>Adicionar novo usuário</ion-title>
+                </ion-toolbar>
+                <form (ngSubmit)="edit ? editarUsuario() : criarUsuario()" style="width: 95%; display: flex; flex-direction: column; margin: 10px;">
+                  <ion-input [(ngModel)]="usuario.name" label="Nome" name="nome" label-placement="floating" fill="outline" placeholder="Nome" style="margin-bottom: 10px;"></ion-input>
+                  <ion-input [(ngModel)]="usuario.email" label="E-mail" name="email" label-placement="floating" fill="outline" placeholder="E-mail" style="margin-bottom: 10px;"></ion-input>
+                  <ion-input [(ngModel)]="usuario.password" label="Senha" name="password" label-placement="floating" fill="outline" placeholder="Senha" type="password" style="margin-bottom: 10px;"></ion-input>
+
+                  <ion-button expand="" type="submit">Enviar</ion-button>
+                </form>
+              </div>
+            </ng-template>
+          </ion-modal>
+
+          <ion-toast
+            [isOpen]="isToastOpen"
+            [message]="message"
+            [duration]="500"
+            (didDismiss)="setOpenToast(false)"
+          ></ion-toast>
+        </div>
+      </div>
+    </ion-content>
+    <div class="footer">
+      <img alt="Logo Padocare" src="../../assets/logo.png" />
+    </div>
+  </div>
+</ion-content>
